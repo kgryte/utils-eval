@@ -1,0 +1,79 @@
+{
+  "name": "utils-eval",
+  "version": "0.0.0",
+  "description": "Alias for eval global.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "kgryte@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
+    }
+  ],
+  "bin": {
+    "jseval": "./bin/cli"
+  },
+  "scripts": {
+    "test": "if [ \"${TRAVIS}\" ]; then npm run test-ci; else mocha; fi",
+    "test-ci": "mocha && xvfb-run testling ./",
+    "test-cov": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "test-browsers": "testling ./",
+    "coverage": "istanbul cover ./node_modules/.bin/_mocha --dir ./reports/codecov/coverage --report lcovonly -- -R spec && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kgryte/utils-eval.git"
+  },
+  "keywords": [
+    "utilities",
+    "utility",
+    "utils",
+    "util",
+    "eval",
+    "evil",
+    "evaluate",
+    "run",
+    "invoke",
+    "cli"
+  ],
+  "bugs": {
+    "url": "https://github.com/kgryte/utils-eval/issues"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "pkginfo": "^0.3.1",
+    "update-notifier": "^0.6.0"
+  },
+  "devDependencies": {
+    "chai": "3.x.x",
+    "codecov.io": "^0.1.5",
+    "istanbul": "^0.4.1",
+    "jshint": "2.x.x",
+    "jshint-stylish": "2.x.x",
+    "mocha": "2.x.x",
+    "testling": "^1.7.1"
+  },
+  "testling": {
+    "harness": "mocha-bdd",
+    "files": [
+      "test/*.js"
+    ],
+    "browsers": [
+      "iexplore/6.0..latest",
+      "firefox/3.0..latest",
+      "firefox/nightly",
+      "chrome/4.0..latest",
+      "chrome/canary",
+      "opera/10.0..latest",
+      "opera/next",
+      "safari/4.0..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  },
+  "license": "MIT"
+}
