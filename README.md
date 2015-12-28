@@ -2,7 +2,7 @@ eval
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Alias for `eval` global.
+> Alias for [`eval`][eval] global.
 
 
 ## Installation
@@ -20,7 +20,7 @@ var evil = require( 'utils-eval' );
 
 #### evil( str )
 
-Alias for `eval` global.
+Alias for [`eval`][eval] global.
 
 ``` javascript
 var val = evil( '5*4*3*2*1' );
@@ -30,7 +30,7 @@ var val = evil( '5*4*3*2*1' );
 
 ## Notes
 
-*	A reference to `eval` __is__ treated differently by the compiler. For example, when evaluating code containing block-scoped declarations (e.g., `let`, `const`, `function`, `class`), the compiler may throw an `error` complaining that block-scoped declarations are __not__ yet supported outside of `strict mode`. One possible workaround is to include `"use strict";` in the evaluated code, as done in the example below.
+*	A reference to [`eval`][eval] __is__ treated differently by the compiler. For example, when evaluating code containing block-scoped declarations (e.g., `let`, `const`, `function`, `class`), the compiler may throw an `error` complaining that block-scoped declarations are __not__ yet supported outside of `strict mode`. One possible workaround is to include `"use strict";` in the evaluated code, as done in the example below.
 
 
 ## Examples
@@ -196,3 +196,5 @@ Copyright &copy; 2015. Athan Reines.
 [chai]: http://chaijs.com
 [istanbul]: https://github.com/gotwarlost/istanbul
 [testling]: https://ci.testling.com
+
+[eval]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
