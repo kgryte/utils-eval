@@ -100,7 +100,7 @@ $ npm install -g utils-eval
 ### Usage
 
 ``` bash
-Usage: jseval [options] <code>
+Usage: jseval [options] code
 
 Options:
 
@@ -113,6 +113,7 @@ Options:
 
 ``` bash
 $ jseval '5*4*3*2*1'
+# => 120
 ```
 
 
